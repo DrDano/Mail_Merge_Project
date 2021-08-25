@@ -13,10 +13,13 @@
 # Use for loop to pick 0 index of "letter_list" and name it "first_sentence".
 # Use first_sentence.replace("[name]", name) to replace "[name]" in letter with Aang.
 
-with open(file="../Names/._invited_names.txt", mode="r") as names_file:
+with open(file="C:/Users/Fusion/PycharmProjects/Mail+Merge+Project+Start/"
+               "__MACOSX/Mail Merge Project Start/Input/Names/._invited_names.txt", mode="r") as names_file:
     names_list = names_file.readlines()
 
 for name in names_list:
-    with open(file=f"./ReadyToSend/name{name}", mode="w") as
+    with open(file=f"C:/Users/Fusion/PycharmProjects/Mail+Merge+Project+Start"
+                   f"/__MACOSX/Mail Merge Project Start/Output/ReadyToSend/name_{name}", mode="w") as new_letter:
+        str(new_letter).replace(__old="[name]", __new=str(name))
 
 
