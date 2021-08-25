@@ -17,6 +17,7 @@ with open(file="../Names/._invited_names.txt", mode="r") as names_file:
     names_list = names_file.readlines()
 
 for name in names_list:
-    with open(file=f"./ReadyToSend/name{name}", mode="w") as
+    with open(file=f"./ReadyToSend/name{name}", mode="w") as new_letter:
+        str(new_letter).replace(__old="[name]", __new=str(name))
 
 
