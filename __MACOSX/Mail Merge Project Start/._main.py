@@ -12,14 +12,17 @@
 # Use readlines() to create a list called "letter_list"
 # Use for loop to pick 0 index of "letter_list" and name it "first_sentence".
 # Use first_sentence.replace("[name]", name) to replace "[name]" in letter with Aang.
+edited_names_list = []
 
-with open(file="C:/Users/Fusion/PycharmProjects/Mail+Merge+Project+Start/"
-               "__MACOSX/Mail Merge Project Start/Input/Names/._invited_names.txt", mode="r") as names_file:
+with open(file="./Input/Names/._invited_names.txt", mode="r") as names_file:
     names_list = names_file.readlines()
+    for name in names_list:
+        edited_name = name[:-1]
+        edited_names_list.append(edited_name)
 
-for name in names_list:
-    with open(file=f"C:/Users/Fusion/PycharmProjects/Mail+Merge+Project+Start"
-                   f"/__MACOSX/Mail Merge Project Start/Output/ReadyToSend/name_{name}", mode="w") as new_letter:
-        str(new_letter).replace(__old="[name]", __new=str(name))
-
-
+for name in edited_names_list:
+    with open(file=f"./Output/ReadyToSend/{name}.txt", mode="w") as new_letter:
+        new_letter.write(f"Dear {name},\n"
+                         "You are invited to my birthday this Saturday.\n"
+                         "Hope you can make it!\n"
+                         "Daniel")
